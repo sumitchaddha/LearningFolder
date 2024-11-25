@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.container {
+  background-color: #2d2e2e;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  color: #fffF;
+  text-decoration: none;
+  font-size: 36px;
+  background-color: #a8b4a5;
+  border-radius: 24px;
+  border: none;
+  outline: none;
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  padding: 18px 48px;
+}
+
+.btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  border-radius: 22px;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  background: linear-gradient(
+    45deg,
+    #da627d,
+    #FDE74C,
+    #f9dbbd,
+    #C3423F,
+    #26a96c,
+    #FF331F,
+    #44e5e7
+  );
+  top: -2px;
+  left: -2px;
+  background-size: 650%;
+  z-index: -1;
+  animation: motion 20s linear infinite;
+  transition: opacity 0.3s ease-out;
+  border-radius: 24px;
+  opacity: 0;
+  filter: blur(8px);
+}
+
+@keyframes motion {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn:active::after {
+  background: transparent;
+}
+
+.btn:active {
+    color: #000;
+    font-weight: bold;
+  }
+  
